@@ -707,3 +707,207 @@
     });
   </script>
 
+## Después de pegar el código
+
+1. Guarda el archivo.
+2. Haz commit en GitHub.
+3. Espera 1 minuto.
+4. Recarga tu GitHub Pages.
+
+  <section>
+    <h2 class="section-title">Web3 Analytics Dashboard</h2>
+
+```
+<div class="cards">
+  <div class="card">
+    <h3>Total Transactions</h3>
+    <h1 id="transactions">1,245,920</h1>
+    <p>Transacciones verificadas en blockchain.</p>
+  </div>
+
+  <div class="card">
+    <h3>Network Security</h3>
+    <h1>99.99%</h1>
+    <p>Cifrado distribuido y validación global.</p>
+  </div>
+
+  <div class="card">
+    <h3>TPS Speed</h3>
+    <h1 id="speed">4,200</h1>
+    <p>Transacciones por segundo.</p>
+  </div>
+</div>
+```
+
+  </section>
+
+  <section>
+    <h2 class="section-title">Predicciones Futuras</h2>
+
+```
+<div class="cards">
+  <div class="card">
+    <h3>Blockchain + IA</h3>
+    <p>
+      Las inteligencias artificiales autónomas usarán blockchain para validar decisiones y proteger identidades digitales.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Universidades Web3</h3>
+    <p>
+      Certificados académicos y diplomas podrán verificarse directamente en blockchain.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Gobiernos Digitales</h3>
+    <p>
+      Sistemas electorales y servicios públicos descentralizados reducirán el fraude.
+    </p>
+  </div>
+</div>
+```
+
+  </section>
+
+  <section>
+    <h2 class="section-title">Cyber Security Center</h2>
+
+```
+<div style="display:flex;justify-content:center;align-items:center;flex-direction:column;gap:20px;">
+  <div style="width:250px;height:250px;border-radius:50%;border:8px solid #00e5ff;display:flex;justify-content:center;align-items:center;box-shadow:0 0 40px rgba(0,229,255,0.5);animation:pulse 2s infinite;">
+    <h1 id="security">SECURE</h1>
+  </div>
+
+  <p style="max-width:700px;text-align:center;color:#cbd5e1;line-height:1.8;">
+    Blockchain utiliza criptografía avanzada, validación distribuida y consenso global para garantizar seguridad, transparencia e inmutabilidad de los datos.
+  </p>
+</div>
+```
+
+  </section>
+
+  <section>
+    <h2 class="section-title">Experiencia Inmersiva</h2>
+
+```
+<div class="cards">
+  <div class="card">
+    <h3>🌐 Internet Descentralizado</h3>
+    <p>
+      Los usuarios controlarán sus datos sin depender de empresas centralizadas.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>🎮 Gaming Web3</h3>
+    <p>
+      Juegos Play-to-Earn con economías digitales reales y NFTs.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>💰 Finanzas DeFi</h3>
+    <p>
+      Bancos descentralizados funcionando 24/7 sin intermediarios.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>🧠 IA Autónoma</h3>
+    <p>
+      Agentes inteligentes ejecutando contratos y automatizando procesos.
+    </p>
+  </div>
+</div>
+```
+
+  </section>
+
+  <style>
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(0,229,255,0.3);
+      }
+
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 50px rgba(0,229,255,0.8);
+      }
+
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(0,229,255,0.3);
+      }
+    }
+
+    .typing {
+      border-right: 2px solid #00e5ff;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 5s steps(40,end), blink 1s infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+  </style>
+
+  <script>
+    // DASHBOARD DINAMICO
+    setInterval(() => {
+      document.getElementById('transactions').innerHTML =
+        (1200000 + Math.floor(Math.random() * 100000)).toLocaleString();
+
+      document.getElementById('speed').innerHTML =
+        4000 + Math.floor(Math.random() * 1000);
+    }, 2000);
+
+    // EFECTO DE ENTRADA
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0px)';
+        }
+      });
+    });
+
+    document.querySelectorAll('.card').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(50px)';
+      card.style.transition = '1s';
+      observer.observe(card);
+    });
+
+    // EFECTO SONIDO VISUAL
+    document.addEventListener('mousemove', e => {
+      const glow = document.createElement('div');
+
+      glow.style.position = 'fixed';
+      glow.style.left = e.clientX + 'px';
+      glow.style.top = e.clientY + 'px';
+      glow.style.width = '10px';
+      glow.style.height = '10px';
+      glow.style.borderRadius = '50%';
+      glow.style.background = '#00e5ff';
+      glow.style.pointerEvents = 'none';
+      glow.style.boxShadow = '0 0 20px #00e5ff';
+      glow.style.zIndex = '9999';
+
+      document.body.appendChild(glow);
+
+      setTimeout(() => {
+        glow.remove();
+      }, 300);
+    });
+  </script>
+
+
