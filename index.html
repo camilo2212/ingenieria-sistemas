@@ -1,8 +1,4 @@
-# Sitio Web Interactivo Mejorado - Blockchain & Web3
 
-Reemplaza todo el contenido de tu `index.html` por este código:
-
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -547,4 +543,167 @@ Reemplaza todo el contenido de tu `index.html` por este código:
     setInterval(loadPrices, 30000);
   </script>
 
+## Después de pegar el código
+
+1. Guarda el archivo.
+2. Haz commit en GitHub.
+3. Espera 1 minuto.
+4. Recarga tu GitHub Pages.
+
+  <section>
+    <h2 class="section-title">Wallet Web3 Simulator</h2>
+
+```
+<div class="cards">
+  <div class="card">
+    <h3>Conectar Wallet</h3>
+    <p>
+      Simulación interactiva de conexión a MetaMask.
+    </p>
+
+    <button class="btn" onclick="connectWallet()">
+      Connect Wallet
+    </button>
+
+    <p id="wallet-status" style="margin-top:15px;color:#00e5ff;">
+      Wallet desconectada
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Smart Contract Demo</h3>
+    <p>
+      Simulación visual de ejecución de contratos inteligentes.
+    </p>
+
+    <button class="btn" onclick="runContract()">
+      Ejecutar Smart Contract
+    </button>
+
+    <p id="contract-status" style="margin-top:15px;color:#00e5ff;">
+      Esperando ejecución...
+    </p>
+  </div>
+</div>
+```
+
+  </section>
+
+  <section>
+    <h2 class="section-title">Blockchain Explorer</h2>
+
+```
+<div class="cards">
+  <div class="card">
+    <h3>Bloque #458920</h3>
+    <p>Hash: 0x8af3d...9e1c</p>
+    <p>Transacciones: 2,530</p>
+  </div>
+
+  <div class="card">
+    <h3>Gas Fee</h3>
+    <p>Ethereum Network</p>
+    <h2 id="gas">42 GWEI</h2>
+  </div>
+
+  <div class="card">
+    <h3>Nodos Activos</h3>
+    <h2 id="nodes">15,483</h2>
+    <p>Red distribuida globalmente</p>
+  </div>
+</div>
+```
+
+  </section>
+
+  <section>
+    <h2 class="section-title">AI + Blockchain</h2>
+
+```
+<div class="cards">
+  <div class="card">
+    <h3>Inteligencia Artificial</h3>
+    <p>
+      La IA y blockchain juntos permiten automatización segura, identidad digital y contratos inteligentes autónomos.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Ciberseguridad</h3>
+    <p>
+      Blockchain protege información sensible mediante criptografía avanzada y consenso distribuido.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>IoT + Web3</h3>
+    <p>
+      Dispositivos inteligentes conectados usando redes descentralizadas y almacenamiento seguro.
+    </p>
+  </div>
+</div>
+```
+
+  </section>
+
+  <section>
+    <h2 class="section-title">Terminal Hacker Web3</h2>
+
+```
+<div style="background:black;padding:30px;border-radius:20px;color:#00ff99;font-family:monospace;box-shadow:0 0 25px rgba(0,255,153,0.3);">
+  <p>> Connecting to Ethereum Network...</p>
+  <p>> Wallet authenticated ✔</p>
+  <p>> Smart Contract deployed ✔</p>
+  <p>> Mining block...</p>
+  <p id="mining">> Hash rate stable ████████</p>
+</div>
+```
+
+  </section>
+
+  <script>
+    function connectWallet() {
+      const status = document.getElementById('wallet-status');
+      status.innerHTML = '🟢 MetaMask Connected Successfully';
+    }
+
+    function runContract() {
+      const contract = document.getElementById('contract-status');
+      contract.innerHTML = '⚡ Smart Contract Executed Successfully';
+    }
+
+    // DATOS DINAMICOS
+    setInterval(() => {
+      const gas = document.getElementById('gas');
+      const nodes = document.getElementById('nodes');
+
+      gas.innerHTML = Math.floor(Math.random() * 100) + ' GWEI';
+      nodes.innerHTML = 15000 + Math.floor(Math.random() * 1000);
+    }, 3000);
+
+    // EFECTO TERMINAL
+    const miningText = document.getElementById('mining');
+
+    setInterval(() => {
+      const blocks = ['███████', '█████████', '█████', '██████████'];
+      miningText.innerHTML = '> Hash rate stable ' + blocks[Math.floor(Math.random() * blocks.length)];
+    }, 500);
+
+    // CURSOR MAGNETICO
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+
+        card.style.transform = `rotateY(${x / 20}deg) rotateX(${-y / 20}deg) scale(1.05)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'rotateY(0deg) rotateX(0deg) scale(1)';
+      });
+    });
+  </script>
 
