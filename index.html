@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blockchain & Web3</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      background:#0f172a;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    header{
+      height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+      background:linear-gradient(135deg,#0f172a,#1e293b,#2563eb);
+    }
+
+    header h1{
+      font-size:4rem;
+      margin-bottom:20px;
+      animation:fadeIn 2s ease;
+    }
+
+    header p{
+      max-width:700px;
+      font-size:1.2rem;
+      line-height:1.6;
+      animation:fadeIn 3s ease;
+    }
+
+    .btn{
+      margin-top:30px;
+      padding:15px 30px;
+      border:none;
+      border-radius:10px;
+      background:#38bdf8;
+      color:#0f172a;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+      font-size:1rem;
+    }
+
+    .btn:hover{
+      transform:scale(1.1);
+      background:white;
+    }
+
+    section{
+      padding:80px 10%;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+      margin-top:40px;
+    }
+
+    .card{
+      background:#1e293b;
+      padding:25px;
+      border-radius:15px;
+      transition:0.4s;
+      cursor:pointer;
+      border:2px solid transparent;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      border-color:#38bdf8;
+      box-shadow:0 0 20px rgba(56,189,248,0.5);
+    }
+
+    .card h3{
+      margin-bottom:15px;
+      color:#38bdf8;
+    }
+
+    .info-box{
+      margin-top:40px;
+      background:#1e293b;
+      padding:25px;
+      border-radius:15px;
+      display:none;
+      animation:fadeIn 0.5s ease;
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      background:#020617;
+      margin-top:50px;
+    }
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(20px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Blockchain & Web3</h1>
+    <p>
+      Descubre cómo la tecnología blockchain y Web3 están transformando internet,
+      permitiendo aplicaciones descentralizadas, criptomonedas y nuevas formas
+      de interacción digital.
+    </p>
+
+    <button class="btn" onclick="mostrarMensaje()">
+      Explorar Web3
+    </button>
+  </header>
+
+  <section>
+    <h2>Conceptos Principales</h2>
+
+    <div class="cards">
+
+      <div class="card" onclick="mostrarInfo('blockchain')">
+        <h3>Blockchain</h3>
+        <p>Cadena de bloques segura y descentralizada.</p>
+      </div>
+
+      <div class="card" onclick="mostrarInfo('web3')">
+        <h3>Web3</h3>
+        <p>La nueva generación de internet descentralizada.</p>
+      </div>
+
+      <div class="card" onclick="mostrarInfo('crypto')">
+        <h3>Criptomonedas</h3>
+        <p>Dinero digital basado en blockchain.</p>
+      </div>
+
+      <div class="card" onclick="mostrarInfo('nft')">
+        <h3>NFTs</h3>
+        <p>Activos digitales únicos e irrepetibles.</p>
+      </div>
+
+    </div>
+
+    <div class="info-box" id="infoBox"></div>
+  </section>
+
+  <footer>
+    <p>Proyecto Web Interactivo - Blockchain & Web3</p>
+  </footer>
+
+  <script>
+    function mostrarMensaje(){
+      alert("¡Bienvenido al mundo de Blockchain y Web3!");
+    }
+
+    function mostrarInfo(tipo){
+
+      const infoBox = document.getElementById("infoBox");
+
+      let contenido = "";
+
+      if(tipo === "blockchain"){
+        contenido = `
+          <h2>Blockchain</h2>
+          <p>
+            Blockchain es una tecnología de registro distribuido que almacena
+            información en bloques enlazados de forma segura y transparente.
+          </p>
+        `;
+      }
+
+      else if(tipo === "web3"){
+        contenido = `
+          <h2>Web3</h2>
+          <p>
+            Web3 representa una internet descentralizada donde los usuarios
+            tienen mayor control sobre sus datos y activos digitales.
+          </p>
+        `;
+      }
+
+      else if(tipo === "crypto"){
+        contenido = `
+          <h2>Criptomonedas</h2>
+          <p>
+            Las criptomonedas son monedas digitales que utilizan criptografía
+            para realizar transacciones seguras sin intermediarios.
+          </p>
+        `;
+      }
+
+      else if(tipo === "nft"){
+        contenido = `
+          <h2>NFTs</h2>
+          <p>
+            Los NFTs son tokens únicos que representan la propiedad de activos
+            digitales como arte, música o videojuegos.
+          </p>
+        `;
+      }
+
+      infoBox.innerHTML = contenido;
+      infoBox.style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
